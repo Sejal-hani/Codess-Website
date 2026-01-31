@@ -50,6 +50,7 @@ body {
   font-family: Nunito, sans-serif;
   color: black;
   background-color: #ebedee;
+  overflow-x: hidden;
 }
 
 /* .nav-link{
@@ -312,6 +313,23 @@ body {
   height: 100px;
   border-radius: 50%;
   margin-top: -50px;
+  animation: floating 3s ease-in-out infinite;
+}
+
+.circle:nth-child(1) {
+  animation-delay: 0s;
+}
+.circle:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.circle:nth-child(3) {
+  animation-delay: 1s;
+}
+.circle:nth-child(4) {
+  animation-delay: 1.5s;
+}
+.circle:nth-child(5) {
+  animation-delay: 2s;
 }
 
 #cicle-logo {
@@ -477,7 +495,7 @@ body {
   padding: 20px 20px 0px 0px;
 }
  .card-testimonials:hover{   
-   border: 3px solid #cb68f3;
+   border: 1px solid #cb68f3;
    transform: scale(1.02);
  }
 .img-bx {
@@ -536,9 +554,36 @@ body {
   transform: scale(1.2); /* Scale the icon on hover */
 }
 
-.mt-5 :hover{
-  transform: scale(1.1);
-  transition-duration: 0.8s;
+.stat-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: rgba(255, 255, 255, 0.25); /* Glaze/Glass effect */
+  background: rgba(255, 255, 255, 0.15); /* Glaze/Glass effect - Reduced opacity */
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+.stat-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.3);
+}
+.stat-card h4 {
+  font-size: 2.5rem;
+  color: #9549eb;
+  -webkit-text-fill-color: #9549eb;
+  transition: all 0.3s ease;
+}
+.stat-card:hover h4 {
+  background: linear-gradient(90deg, #5848ea, #9549eb, #fa709a, #5848ea);
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: button-gradient 4s ease-in-out infinite;
 }
 
 .circle-mentors {
@@ -1386,6 +1431,11 @@ h1.big-heading {
   }
 }
 
+#apply {
+  position: relative;
+  overflow: hidden;
+}
+
 /* footer */
 
 .container-footer {
@@ -1504,4 +1554,3 @@ h1.big-heading {
 .container-faq {
   padding: 3%;
 }
-
